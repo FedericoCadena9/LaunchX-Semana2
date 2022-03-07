@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/uikit.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'isabelline': '#F6F3F0',
+                        'primary-400': '#f6b3b2',
+                        'primary-500': '#bf3030',
+                        'primary-600': '#7A0A0A',
+                        'secondary-500': '#472208',
+                    }
+                }
+            }
+        }
+
+    </script>
+    <title>Bakerville - Pastelería</title>
+</head>
+
+<body class="font-primary">
+
+    <header class="z-50 w-full px-2 py-4 sm:px-4 fixed bg-white">
+        <div class="flex items-centter justify-between mx-auto">
+
+            <a href="/" title="Bakerville Home Page" class="flex items-center">
+                <img class="w-20" src="../HTML-Bakerville/assets/img/BakerVille.svg" alt="BakerVille Logo">
+                <p class="mak-bold text-2xl text-primary-500 ml-3 pt-2 hidden sm:inline-block">Bakerville.</p>
+            </a>
+
+            <div class="flex items-center text-sm text-secondary-500">
+                <ul class="hidden space-x-6 md:inline-flex ">
+                    <li><a href="#sabores">Nuestro Sabores</a></li>
+                    <li><a href="#decoraciones">Decoración</a></li>
+                    <li><a href="#formulario">Haz tu Pedido</a></li>
+                </ul>
+            </div>
+
+            <div class="flex items-center">
+                <a class="text-white bg-primary-500 text-sm px-3 py-2 hover:bg-primary-600 ease-in-out cursor-pointer duration-200"
+                    href="./inventario.html">Inventario</a>
+            </div>
+
+            <div class="inline-flex md:hidden" x-data="{ open: false }">
+                <button class="flex-none px-2" @click="open = true">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-secondary-500" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                    <span class="sr-only">Open Menu</span>
+                </button>
+                <div class="absolute top-0 left-0 right-0 z-50 flex flex-col p-2 pb-4 m-2 space-y-4 bg-white bg-isabelline text-secondary-500"
+                    x-show.transition="open" @click.away="open = false" x-cloak>
+                    <button class="self-end flex-none px-2" @click="open = false">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Cerrar Menu</span>
+                    </button>
+                    <a @click="open = !open" class="w-full hover:bg-rose-100 py-2.5 px-3" href="#sabores">Nuestro
+                        Sabores</a>
+                    <a @click="open = !open" class="w-full hover:bg-rose-100 py-2.5 px-3"
+                        href="#decoraciones">Decoración</a>
+                    <a @click="open = !open" class="w-full hover:bg-rose-100 py-2.5 px-3" href="#formulario">Haz tu
+                        Pedido</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="grid grid-cols-2 pt-36 bg-isabelline relative sm:px-8 px-6 pb-24">
+        <div class="absolute -top-20 -left-20 z-10">
+            <div class="bg-primary-500/50 w-64 h-64 rounded-full blur-3xl "></div>
+        </div>
+        <div class="absolute -bottom-40 left-1/3">
+            <div class="bg-primary-400/75 w-64 z-10 h-64 rounded-full blur-3xl"></div>
+        </div>
+        <div class="mt-10 px-10">
+            <div class="flex flex-col items-end">
+                <h1 class="order-2 mak-bold text-primary-500 text-7xl">Bakereville.</h1>
+                <h2 class="order-1 text-secondary-500 font-light text-sm my-6">El mejor postre para cualquier ocasión
+                </h2>
+            </div>
+
+            <p class="order-3 text-sm text-gray-600 my-12 w-1/2">Lorem ipsum dolor, sit amet consectetur adipisicing
+                elit. Numquam ducimus repellendus quisquam ad, ut eum dolorum est error aut amet.</p>
+
+            <div class="sm:space-x-4">
+                <a href="#sabores"
+                    class="text-sm text-gray-500 border-gray-400 border bg-gray-50/50 hover:bg-gray-50/100 px-6 py-3 cursor-pointer">Descubrir
+                    sabores</a>
+                <a href="#formulario"
+                    class="text-white bg-primary-500 text-sm px-6 py-3 hover:bg-primary-600 ease-in-out cursor-pointer duration-200">Quiero
+                    un pastel</a>
+            </div>
+        </div>
+        <div>
+            <img class="object-cover h-96 w-full"
+                src="https://images.unsplash.com/photo-1583338917451-face2751d8d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                alt="Pastel Hero">
+        </div>
+    </div>
+
+    <!-- Nuestros sabores -->
+    <div class="bg-white z-30 relative">
+        <div class="sm:px-8 px-6 py-12">
+            <h3 class="text-sm text-secondary-500 font-light">Nuestros sabores</h3>
+            <p class="text-primary-500 mak text-3xl">De nuestro horno a su puerta</p>
+            <p class="text-gray-500 pt-4">Descubre los fantasticos sabores que tenemos para ti.</p>
+        </div>
+
+        <div id="sabores" class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push">
+            <ul class="uk-slideshow-items">
+                <li class="grid grid-cols-2">
+                    <img class="min-h-screen w-full object-cover"
+                        src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hvY29sYXRlJTIwY2FrZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60"
+                        alt="Sabor Chocolate">
+                    <div class="px-24 pt-40 bg-white min-h-screen">
+                        <p class="text-secondary-500 mak-bold text-4xl">Chocolate</p>
+                        <p class="mt-4 text-gray-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Accusamus animi voluptas deleniti
+                            nihil optio fugit.</p>
+                        <p class="text-primary-500 text-4xl font-bold mt-4">$450 MXN</p>
+
+                        <a href="#formulario">
+                            <button
+                                class="my-6 text-white bg-primary-500 text-sm px-3 py-2 hover:bg-primary-600 ease-in-out cursor-pointer duration-200">Pedir
+                                Sabor</button>
+                        </a>
+
+                        <table>
+                            <tr class="space-x-6">
+                                <th class="text-secondary-500 pr-6 py-2">Gluten Free</th>
+                                <th class="text-secondary-500 px-6 py-2">Orgánico</th>
+                            </tr>
+                            <tr space-x-6>
+                                <td class="text-gray-500 pr-6 py-2">Si</td>
+                                <td class="text-gray- px-6 py-2">Si</td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+                <li class="grid grid-cols-2">
+                    <img class="min-h-screen w-full object-cover"
+                        src="https://images.unsplash.com/photo-1536599524557-5f784dd53282?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dmFuaWxsYSUyMGNha2V8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60"
+                        alt="Sabor Vainilla">
+                    <div class="px-24 pt-40 bg-white min-h-screen">
+                        <p class="text-secondary-500 mak-bold text-4xl">Vainilla</p>
+                        <p class="mt-4 text-gray-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Accusamus animi voluptas deleniti
+                            nihil optio fugit.</p>
+                        <p class="text-primary-500 text-4xl font-bold mt-4">$400 MXN</p>
+
+                        <a href="#formulario">
+                            <button
+                                class="my-6 text-white bg-primary-500 text-sm px-3 py-2 hover:bg-primary-600 ease-in-out cursor-pointer duration-200">Pedir
+                                Sabor</button>
+                        </a>
+
+                        <table>
+                            <tr class="space-x-6">
+                                <th class="text-secondary-500 pr-6 py-2">Gluten Free</th>
+                                <th class="text-secondary-500 px-6 py-2">Orgánico</th>
+                            </tr>
+                            <tr space-x-6>
+                                <td class="text-gray-500 pr-6 py-2">Si</td>
+                                <td class="text-gray- px-6 py-2">Si</td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+                <li class="grid grid-cols-2">
+                    <img class="min-h-screen w-full object-cover"
+                        src="https://images.unsplash.com/photo-1551879400-111a9087cd86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                        alt="Sabor Red Velvet">
+                    <div class="px-24 pt-40 bg-white min-h-screen">
+                        <p class="text-secondary-500 mak-bold text-4xl">Red Velvet</p>
+                        <p class="mt-4 text-gray-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Accusamus animi voluptas deleniti
+                            nihil optio fugit.</p>
+                        <p class="text-primary-500 text-4xl font-bold mt-4">$600 MXN</p>
+
+                        <a href="#formulario">
+                            <button
+                                class="my-6 text-white bg-primary-500 text-sm px-3 py-2 hover:bg-primary-600 ease-in-out cursor-pointer duration-200">Pedir
+                                Sabor</button>
+                        </a>
+
+                        <table>
+                            <tr class="space-x-6">
+                                <th class="text-secondary-500 pr-6 py-2">Gluten Free</th>
+                                <th class="text-secondary-500 px-6 py-2">Orgánico</th>
+                            </tr>
+                            <tr space-x-6>
+                                <td class="text-gray-500 pr-6 py-2">Si</td>
+                                <td class="text-gray- px-6 py-2">Si</td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+
+                <li class="grid grid-cols-2">
+                    <img class="min-h-screen w-full object-cover"
+                        src="https://images.unsplash.com/photo-1613071964901-d36d329633c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29jb251dCUyMGNha2V8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60"
+                        alt="Sabor Rompope">
+                    <div class="px-24 pt-40 bg-white min-h-screen">
+                        <p class="text-secondary-500 mak-bold text-4xl"> Rompope</p>
+                        <p class="mt-4 text-gray-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Accusamus animi voluptas deleniti
+                            nihil optio fugit.</p>
+                        <p class="text-primary-500 text-4xl font-bold mt-4">$550 MXN</p>
+
+                        <a href="#formulario">
+                            <button
+                                class="my-6 text-white bg-primary-500 text-sm px-3 py-2 hover:bg-primary-600 ease-in-out cursor-pointer duration-200">Pedir
+                                Sabor</button>
+                        </a>
+
+                        <table>
+                            <tr class="space-x-6">
+                                <th class="text-secondary-500 pr-6 py-2">Gluten Free</th>
+                                <th class="text-secondary-500 px-6 py-2">Orgánico</th>
+                            </tr>
+                            <tr space-x-6>
+                                <td class="text-gray-500 pr-6 py-2">Si</td>
+                                <td class="text-gray- px-6 py-2">No</td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="uk-light">
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                    uk-slideshow-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                    uk-slideshow-item="next"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Decoraciones -->
+    <div id="decoraciones" class="pt-6 bg-isabelline">
+        <div class="sm:px-8 px-6 pt-14">
+            <h3 class="text-sm text-secondary-500 font-light">Decoraciones</h3>
+            <p class="text-primary-500 mak text-3xl">¿Buscas algo más vistoso?</p>
+            <p class="text-gray-500 pt-4">No te preocupes, tenemos los ingredientes que necesitas.</p>
+        </div>
+
+        <div class="mt-12">
+            <ol>
+                <li class="grid grid-cols-2">
+                    <img class="object-cover w-full h-96 border border-gray-500"
+                        src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGNha2UlMjBkZWNvcmF0aW9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                        alt="Decoración Frutal">
+                    <div class="flex flex-col items-center justify-center border border-gray-500">
+                        <p class="text-primary-500 text-3xl mak-bold">Decoración frutal</p>
+                        <p class="my2 text-secondary-500">$150 MXN</p>
+                    </div>
+                </li>
+                <li class="grid grid-cols-2">
+                    <img class="object-cover w-full h-96 border border-gray-500 order-2"
+                        src="https://images.unsplash.com/photo-1529767367174-535729449d71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FrZSUyMHNwcmlua2xlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60"
+                        alt="Decoración Sprinkles">
+                    <div class="flex flex-col items-center justify-center border border-gray-500 order-1">
+                        <p class="text-primary-500 text-3xl mak-bold">Decoración Sprinkles</p>
+                        <p class="my2 text-secondary-500">$100 MXN</p>
+                    </div>
+                </li>
+                <li class="grid grid-cols-2">
+                    <img class="object-cover w-full h-96 border border-gray-500 order-2"
+                        src="https://images.unsplash.com/photo-1525097522700-a4b80b773931?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNha2UlMjBkZWNvcmF0aW9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                        alt="Decoración Muñecos">
+                    <div class="flex flex-col items-center justify-center border border-gray-500 order-1">
+                        <p class="text-primary-500 text-3xl mak-bold">Figuras Decorativas</p>
+                        <p class="my2 text-secondary-500">$350 MXN</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Haz tu pedido -->
+    <div id="formulario" class="sm:px-8 px-6 mb-12">
+        <h3 class="text-primary-500 mak-bold text-3xl pt-20">Realiza tu pedido</h3>
+        <p class="text-gray-500 pt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quos!</p>
+
+        <div class="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 md:grid-cols-3 py-12">
+            <div>
+                <a href="" class="flex flex-col items-center px-4 py-3 text-gray-700 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-primary-500" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span class="mt-2 text-secondary-500">121 Street, NY</span>
+                </a>
+            </div>
+            <div>
+                <a href="" class="flex flex-col items-center px-4 py-3 text-gray-700 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-primary-500" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path
+                            d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    <span class="mt-2 text-secondary-500">+2499999666600</span>
+                </a>
+            </div>
+            <div>
+                <a href="" class="flex flex-col items-center px-4 py-3 text-gray-700 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-primary-500" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span class="mt-2 text-secondary-500">Lun - Vie: 09:00-18:00</span>
+                </a>
+            </div>
+        </div>
+
+        <div >
+            <form action="" class="grid grid-cols-2 gap-8">
+                <!-- Nombre -->
+                <div class="col-span-2">
+                    <label for="nombre" class="block mb-1 text-sm font-medium text-secondary-500">Nombre
+                        Completo</label>
+                    <input
+                        class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md focus:border-primary-500 focus:ring-red-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                        type="text" name="nombre" id="nombre" placeholder="Nombre(s)">
+                </div>
+
+                <!-- Telefono -->
+                <div>
+                    <label for="telefono" class="block mb-1 text-sm font-medium text-secondary-500">Teléfono</label>
+                    <input
+                        class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md focus:border-primary-500 focus:ring-red-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                        type="tel" name="telefono" id="telefono" placeholder="Teléfono" maxlength="10">
+                </div>
+
+                <!-- Correo -->
+                <div>
+                    <label for="correo" class="block mb-1 text-sm font-medium text-secondary-500">Correo
+                        Electrónico</label>
+                    <input
+                        class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md focus:border-primary-500 focus:ring-red-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                        type="email" name="correo" id="correo" placeholder="tucorreo@correo.com">
+                </div>
+
+                <!-- Descripción -->
+                <div class="col-span-2">
+                    <label for="descripcion" class="block mb-1 text-sm font-medium text-secondary-500">Descripción
+                        General</label>
+                    <textarea
+                        class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md focus:border-primary-500 focus:ring-red-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                        name="" id="" cols="30" rows="10"
+                        placeholder="Describe aquí los detalles para tu pastel..."></textarea>
+                </div>
+
+
+                <!-- Sabores -->
+                <div>
+                    <p class="text-xl text-secondary-500 mak">Elección de Sabores</p>
+                    <div class="space-y-6 mt-6">
+                        <div>
+                            <input type="checkbox" value="Chocolate" name="chocolate" id="chocolate">
+                            <label for="chocolate" class="text-gray-700 font-light">Chocolate</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" value="Vainilla" name="vainilla" id="vainilla">
+                            <label for="vainilla" class="text-gray-700 font-light">Vainilla</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" value="Rompope" name="rompope" id="rompope">
+                            <label for="rompope" class="text-gray-700 font-light">Rompope</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" value="Red Velvet" name="red-velvet" id="red-velvet">
+                            <label for="red-velvet" class="text-gray-700 font-light">Red Velvet</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decoración -->
+                <div>
+                    <p class="text-xl text-secondary-500 mak">Elección de Decoración</p>
+
+                    <div class="space-y-6 mt-6">
+                        <div>
+                            <input type="checkbox" value="Frutal" name="frutal" id="frutal">
+                            <label for="frutal" class="text-gray-700 font-light">Frutal</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" value="Sprinkles" name="sprinkles" id="sprinkles">
+                            <label for="sprinkles" class="text-gray-700 font-light">Sprinkles</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" value="Figuras" name="figuras" id="figuras">
+                            <label for="figuras" class="text-gray-700 font-light">Figuras</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones -->
+                <input class="text-white bg-primary-500 text-sm px-6 py-3 hover:bg-primary-600 ease-in-out cursor-pointer duration-200"
+                type="submit" value="Cotizar Pedido" onclick="alert('Envío exitoso.')">
+                <input class="text-sm text-gray-500 border-gray-400 border bg-gray-50/50 hover:bg-gray-50/100 px-6 py-3 cursor-pointer"
+                type="reset" value="Limpiar">
+            </form>
+        </div>
+    </div>
+</body>
+
+<footer class="bg-white">
+    <div class="container px-6 py-8 mx-auto">
+        <div class="text-center">
+            <p class="text-2xl font-bold text-gray-800 hover:text-gray-700">Visualiza la estructura HTML.</p>
+            <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
+                <a target="_blank"  href="">
+                    <button class="w-full px-5 py-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-600 rounded-md sm:mx-2 sm:order-2 sm:w-auto hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">Ver sitio 🚀</button>
+                </a>
+            </div>
+        </div>
+
+        <hr class="my-10 border-gray-200"/>
+
+        <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+            <p class="text-sm text-gray-400">Entregable desarrollado con base a los contenidos de la Semana 2 🚀| Frontend Mission del programa Launch
+                X -
+                Innovacción Virtual Microsoft.</p>
+            <a href="https://federicocadena.vercel.app/" target="_blank" class="font-semibold text-gray-800 text-sm">federicocadena.com</a>
+        </div>
+    </div>
+</footer>
+
+<script src="//unpkg.com/alpinejs" defer></script>
+<script src="./js/uikit.js"></script>
+
+
+</html>
