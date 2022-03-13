@@ -1,11 +1,12 @@
-# Launch-X FrontEnd Mission 🚀 | Semana 2 - Práctica HTML 🦴
+# Launch-X FrontEnd Mission | Semana 2 - Primer vuelo 🛸 Práctica HTML 🦴
 
 ## **Índice**
 
 1. [Caso: Pastelería 🍰](https://github.com/FedericoCadena9/LaunchX-Semana2#caso-pasteleria-)
 2. [Toma de Requerimientos 🔎](https://github.com/FedericoCadena9/LaunchX-Semana2#toma-de-requerimientos-)
 3. [Marca y Logo 📐](https://github.com/FedericoCadena9/LaunchX-Semana2#marca-y-logo-)
-3. [Marca y Logo 📐](https://github.com/FedericoCadena9/LaunchX-Semana2#marca-y-logo-)
+4. [Maquetación de Pastelería 📃]()
+5. [Diseño de la Pastelería 🎨]()
 
 <br/>
 
@@ -35,17 +36,30 @@ En base a los requerimientos funcionales propuestos por el cliente se pueden enc
 
 ## **Maquetación de Pastelería 📃**
 
-![Bakerville-HomeHTML](blob:https://vercel.com/a170ddf4-ae79-461b-9ea4-cfdb6d9eb2a2)
+![Bakerville-HomeHTML](./imgs/BakervilleHTML-Home.png)
 
 > Consulta la página maquetada en HTML desde el siguiente [link](https://html-bakerville.vercel.app/).
 
 ## **Maquetación de Inventario 📈**
 
-![Bakerville-InventarioHTML](blob:https://vercel.com/a170ddf4-ae79-461b-9ea4-cfdb6d9eb2a2)
+![Bakerville-InventarioHTML](./imgs/BakervilleHTML-Inventario.png)
 
-> Consulta la página maquetada en HTML desde el siguiente [link](https://html-bakerville.vercel.app/).
+> Consulta la página maquetada en HTML desde el siguiente [link](https://html-bakerville.vercel.app/inventario.html).
 
 <br/>
 
-Entregables desarrollados con base a los contenidos de la Semana 2 🚀| Frontend Mission del programa Launch X - Innovacción Virtual.
+## **Diseño de la Pastelería 🎨**
+
+![Bakerville-HomeHTML](./imgs/Bakerville-Home.png)
+
+> Consulta la página desde el siguiente [link](https://bakerville.vercel.app/).
+
+## **Diseño del Inventario 🎨**
+
+![Bakerville-InventarioHTML](./imgs/Bakerville-Inventario.png)
+
+> Consulta la página desde el siguiente [link](https://bakerville.vercel.app/inventario.html).
+
+<br/>
+Entregables desarrollados con base a los contenidos de la Semana 2 - Primer vuelo 🛸| Frontend Mission del programa Launch X - Innovacción Virtual.
 
