@@ -5,8 +5,8 @@
 1. [Caso: Pastelería 🍰](https://github.com/FedericoCadena9/LaunchX-Semana2#caso-pasteleria-)
 2. [Toma de Requerimientos 🔎](https://github.com/FedericoCadena9/LaunchX-Semana2#toma-de-requerimientos-)
 3. [Marca y Logo 📐](https://github.com/FedericoCadena9/LaunchX-Semana2#marca-y-logo-)
-4. [Maquetación de Pastelería 📃]()
-5. [Diseño de la Pastelería 🎨]()
+4. [Maquetación de Pastelería 📃](https://github.com/FedericoCadena9/LaunchX-Semana2#maquetaci%C3%B3n-de-pasteler%C3%ADa-)
+5. [Diseño de la Pastelería 🎨](https://github.com/FedericoCadena9/LaunchX-Semana2#dise%C3%B1o-de-la-pasteler%C3%ADa-)
 
 <br/>
 
